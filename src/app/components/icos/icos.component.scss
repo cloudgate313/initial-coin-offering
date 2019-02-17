@@ -1,0 +1,61 @@
+
+@media only screen and (min-width: 320px) {
+    .grid-container-buttons {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        // grid-template-areas: ". . . ." ". . . ." ". . . .";
+        grid-gap: 12px 12px;
+        margin-bottom: 12px;
+    }
+    .grid-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        // grid-template-areas: ". . . ." ". . . ." ". . . .";
+        grid-gap: 12px 12px;
+      }
+}
+
+
+@media only screen and (min-width: 554px) {
+    .grid-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+}
+
+@media only screen and (min-width: 768px) {
+    .grid-container-buttons {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+    }
+    .grid-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+}
+
+@media only screen and (min-width: 992px) {
+    .grid-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+}
+
+@media only screen and (min-width: 1024px) {
+    .grid-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+      }
+}
+
+
+  .example-card {
+    max-width: 400px;
+  }
+  
+  .example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+  }

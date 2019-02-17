@@ -17,28 +17,28 @@ export class ICOsService {
     })
   };
 
-  public getAllICOs(): Observable<any> {
+  getAllICOs(): Observable<any> {
     return this.http.post<any>(this.CIO_BASE_URL + 'getAllICOs', {}, this.httpOptions)
       .pipe(
         // catchError(this.handleError('', hero))
       );
   }
 
-  public getLiveICOs(): Observable<any> {
+  getLiveICOs(): Observable<any> {
     return this.http.post<any>(this.CIO_BASE_URL + 'getOnlyLiveICOs', {}, this.httpOptions)
       .pipe(
         // catchError(this.handleError('', hero))
       );
   }
 
-  public getUpcomingICOs(): Observable<any> {
+  getUpcomingICOs(): Observable<any> {
     return this.http.post<any>(this.CIO_BASE_URL + 'getOnlyUpcomingICOs', {}, this.httpOptions)
       .pipe(
         // catchError(this.handleError('', hero))
       );
   }
 
-  public getCompletedICOs(): Observable<any> {
+  getFinishedICOs(): Observable<any> {
     return this.http.post<any>(this.CIO_BASE_URL + 'getOnlyFinishedICOs', {}, this.httpOptions)
       .pipe(
         // catchError(this.handleError('', hero))

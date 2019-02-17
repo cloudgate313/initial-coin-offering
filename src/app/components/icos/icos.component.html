@@ -1,11 +1,65 @@
-<p>
-  icos works!
-</p>
 
-<button (click)="getAllICOs()">Button</button>
 
-<!-- <p>{{ icos | json }}</p> -->
+<div style="padding: 12px;">
+    <div style="display: flex; justify-content: center;">
+        <div class="grid-container-buttons">
+        <button mat-raised-button color="primary"
+            (click)="getAllICOs()"
+            matBadge="{{icoCount}}" matBadgePosition="before" matBadgeColor="accent">
+          All ICOs
+        </button>
+        
+        <button mat-raised-button color="primary"
+            (click)="getLiveICOs()"
+            matBadge="{{liveCount}}" matBadgePosition="before" matBadgeColor="accent">
+          Live
+        </button>
+        
+        <button mat-raised-button color="primary"
+            (click)="getUpcomingICOs()"
+            matBadge="{{upcomingCount}}" matBadgePosition="before" matBadgeColor="accent">
+          Upcoming
+        </button>
+        
+        <button mat-raised-button color="primary"
+            (click)="getFinishedICOs()"
+            matBadge="{{finishedCount}}" matBadgePosition="before" matBadgeColor="accent">
+          Finished
+        </button>
+        </div>
+      
+      </div>
 
-<ul *ngFor="let ico of icos">
-  <li>{{ ico.name }}</li>
-</ul>
+      <div *ngIf="favoriteCount > 0" style="display: flex; justify-content: center; padding: 12px 12px;">
+        <button mat-raised-button color="accent" style="color: #673ab7;"
+            (click)="getFavoriteICOs()"
+            matBadge="{{favoriteCount}}" matBadgePosition="before" matBadgeColor="primary">
+          Favorites
+        </button>
+      </div>
+      
+      <div class="grid-container">
+          <mat-card *ngFor="let ico of icos">
+              <mat-card-header>
+                <!-- <div mat-card-avatar class="example-header-image"></div> -->
+                <mat-card-title>{{ ico.name }}</mat-card-title>
+                <mat-card-subtitle>{{ ico.start_time | date }} - {{ ico.end_time | date }}</mat-card-subtitle>
+              </mat-card-header>
+          
+              <div style="height: 112px; width: 100%;">
+                <img style="height: auto; width: 100%;" src="{{ ico.image }}" alt="">
+              </div>
+          
+              <mat-card-content>
+                <p style="word-wrap: break-word;">
+                  {{ ico.description }}
+                </p>
+              </mat-card-content>
+              <mat-card-actions>
+                <!-- <button mat-button>Favorite</button> -->
+                <mat-slide-toggle (click)="addToFavorites(ico)"></mat-slide-toggle>
+                <a href="{{ ico.icowatchlist_url }}" mat-button>Website</a>
+              </mat-card-actions>
+            </mat-card>
+      </div>
+</div>

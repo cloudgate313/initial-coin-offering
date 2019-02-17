@@ -17,7 +17,10 @@ import {
   MatDrawerContent,
   MatToolbar,
   MatToolbarRow,
-  MatRippleModule
+  MatRippleModule,
+  MatBadgeModule,
+  MatCardModule,
+  MatSlideToggle
 } from '@angular/material';
 import { ICOsComponent } from './components/icos/icos.component';
 
@@ -32,7 +35,8 @@ import { ICOsComponent } from './components/icos/icos.component';
     MatDrawerContent,
     MatToolbar,
     MatToolbarRow,
-    ICOsComponent
+    ICOsComponent,
+    MatSlideToggle
   ],
   imports: [
     BrowserModule,
@@ -41,7 +45,9 @@ import { ICOsComponent } from './components/icos/icos.component';
     MatButtonModule,
     MatRippleModule,
     HttpClientModule,
-    HttpModule
+    HttpModule,
+    MatBadgeModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
