@@ -9,7 +9,13 @@ import { HomeComponent } from './components/home/home.component';
 // Imports for material design
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {
-  MatButtonModule
+  MatButtonModule,
+  MatDrawer,
+  MatDrawerContainer,
+  MatDrawerContent,
+  MatToolbar,
+  MatToolbarRow,
+  MatRippleModule
 } from '@angular/material';
 
 
@@ -17,13 +23,19 @@ import {
   declarations: [
     AppComponent,
     PageNotFoundComponent,
-    HomeComponent
+    HomeComponent,
+    MatDrawer,
+    MatDrawerContainer,
+    MatDrawerContent,
+    MatToolbar,
+    MatToolbarRow
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatButtonModule
+    MatButtonModule,
+    MatRippleModule
   ],
   providers: [],
   bootstrap: [AppComponent]
