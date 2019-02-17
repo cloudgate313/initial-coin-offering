@@ -1,0 +1,11 @@
+<p>
+  icos works!
+</p>
+
+<button (click)="getAllICOs()">Button</button>
+
+<!-- <p>{{ icos | json }}</p> -->
+
+<ul *ngFor="let ico of icos">
+  <li>{{ ico.name }}</li>
+</ul>
