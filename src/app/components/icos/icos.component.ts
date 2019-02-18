@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ICOsService } from 'src/app/core/icos.service';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-icos',
@@ -7,17 +8,18 @@ import { ICOsService } from 'src/app/core/icos.service';
   styleUrls: ['./icos.component.scss']
 })
 export class ICOsComponent implements OnInit {
+  @Input() checked: boolean;
   icos: Array<Object> = [];
   icoCount: number;
   favoriteICOs: Array<Object> = [];
   favoriteCount: number;
+  isFavorate: true;
   liveICOs: [];
   liveCount: number;
   upcomingICOs: [];
   upcomingCount: number;
   finishedICOs: [];
   finishedCount: number;
-
 
   getAllICOs = () => {
     const arr: [] = [];
@@ -66,13 +68,18 @@ export class ICOsComponent implements OnInit {
 
   getFavoriteICOs = () => {
     this.icos = this.favoriteICOs;
+    console.log(this.icos);
   }
 
   addToFavorites = (ico) => {
     if (this.favoriteICOs.includes(ico)) {
+      ico.isFavorate = false;
+
       const index = this.favoriteICOs.indexOf(ico);
       this.favoriteICOs.splice(index, 1);
     } else {
+      ico.isFavorate = true;
+
       this.favoriteICOs.push(ico);
     }
 

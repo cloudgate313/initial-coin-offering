@@ -57,7 +57,7 @@
               </mat-card-content>
               <mat-card-actions>
                 <!-- <button mat-button>Favorite</button> -->
-                <mat-slide-toggle (click)="addToFavorites(ico)"></mat-slide-toggle>
+                <mat-slide-toggle title="{{ico.isFavorate}}" [checked]="ico.isFavorate" (click)="addToFavorites(ico)"></mat-slide-toggle>
                 <a href="{{ ico.icowatchlist_url }}" mat-button>Website</a>
               </mat-card-actions>
             </mat-card>
