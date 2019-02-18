@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ICOsService } from 'src/app/core/icos.service';
-import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-icos',
