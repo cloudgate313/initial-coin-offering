@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { HomeComponent } from './components/home/home.component';
 import { ICOsComponent } from './components/icos/icos.component';
+import { DefaultImageDirective } from './directives/default-image.directive';
 
 // Support for Material Design
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -18,7 +19,8 @@ import { SharedModuleModule } from '../app/shared-module/shared-module.module';
     AppComponent,
     PageNotFoundComponent,
     HomeComponent,
-    ICOsComponent
+    ICOsComponent,
+    DefaultImageDirective
   ],
   imports: [
     BrowserModule,
@@ -28,6 +30,7 @@ import { SharedModuleModule } from '../app/shared-module/shared-module.module';
     BrowserAnimationsModule,
     SharedModuleModule
   ],
+  exports: [DefaultImageDirective],
   providers: [],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]
